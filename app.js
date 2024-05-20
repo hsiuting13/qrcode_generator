@@ -12,9 +12,10 @@ document
       reader.readAsDataURL(file);
     }
   });
-// Replace with your landing page URL
-const reviewLandingPageUrl = "./";
+
 function generateQRCode() {
+  // Replace with your landing page URL
+  const reviewLandingPageUrl = document.getElementById("url").value;
   let qrCode = new QRCodeStyling({
     width: 300,
     height: 300,
@@ -33,7 +34,7 @@ function generateQRCode() {
       margin: 0,
     },
   });
-
+  console.log(reviewLandingPageUrl);
   // Clear previous QR code if it exists
   document.getElementById("qrcode").innerHTML = "";
   qrCode.append(document.getElementById("qrcode"));
